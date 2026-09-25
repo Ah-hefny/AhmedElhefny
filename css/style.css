@@ -9731,3 +9731,9 @@ strong.number[data-number="45500"]::after {
     margin-top: -12px;
   }
 }
+
+@media (max-width: 991.98px) {
+  #ftco-nav {
+    margin-left: 25px;
+  }
+}
