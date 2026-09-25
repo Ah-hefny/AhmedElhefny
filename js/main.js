@@ -291,6 +291,8 @@ var carousel = function() {
 })(jQuery);
 
 
-
+document.addEventListener('touchmove', function () {
+    document.title = 'TOUCH-RECEIVED';
+}, { passive: true });
 
 
