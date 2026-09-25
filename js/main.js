@@ -1,4 +1,4 @@
-﻿ AOS.init({
+ AOS.init({
  	duration: 800,
  	easing: 'slide'
  });
@@ -94,6 +94,7 @@ var onePageClick = function() {
 	});
 
 };
+onePageClick();
 
 var carousel = function() {
 		$('.home-slider').owlCarousel({
@@ -286,6 +287,8 @@ var carousel = function() {
 
 
 })(jQuery);
+
+
 
 
 
