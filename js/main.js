@@ -1,4 +1,4 @@
- AOS.init({
+﻿ AOS.init({
  	duration: 800,
  	easing: 'slide'
  });
@@ -72,7 +72,7 @@
 	    var href = $.attr(this, 'href');
 
 	    $('html, body').animate({
-	        scrollTop: $($.attr(this, 'href')).offset().top - 70
+	        scrollTop: $(this.hash).offset().top - 70
 	    }, 500, function() {
 	    	// window.location.hash = href;
 	    });
@@ -274,4 +274,5 @@
 
 
 })(jQuery);
+
 
