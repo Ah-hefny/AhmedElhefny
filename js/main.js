@@ -38,7 +38,7 @@
 	loader();
 
 	// Scrollax
-   // $.Scrollax();
+   $.Scrollax();
 
 
 
@@ -97,7 +97,7 @@ var onePageClick = function() {
 onePageClick();
 
 var carousel = function() {
-		if (window.innerWidth > 767) $('.home-slider').owlCarousel({
+		$('.home-slider').owlCarousel({
 	    loop:true,
 	    autoplay: true,
 	    margin:0,
@@ -106,7 +106,6 @@ var carousel = function() {
 	    nav:false,
 	    autoplayHoverPause: false,
 	    items: 1,
-	       touchDrag: false,
 	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
 	    responsive:{
 	      0:{
@@ -120,7 +119,6 @@ var carousel = function() {
 	      }
 	    }
 		});
-		}
 	};
 	carousel();
 
