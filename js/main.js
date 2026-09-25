@@ -75,6 +75,7 @@
 	        scrollTop: $($.attr(this, 'href')).offset().top - 70
 	    }, 500, function() {
 	    	// window.location.hash = href;
+                if (window.innerWidth < 992) { $('#ftco-nav').collapse('hide'); }
 	    });
 		});
 
