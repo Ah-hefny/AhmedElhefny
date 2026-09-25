@@ -97,7 +97,7 @@ var onePageClick = function() {
 onePageClick();
 
 var carousel = function() {
-		$('.home-slider').owlCarousel({
+		if (window.innerWidth > 767) $('.home-slider').owlCarousel({
 	    loop:true,
 	    autoplay: true,
 	    margin:0,
@@ -120,6 +120,7 @@ var carousel = function() {
 	      }
 	    }
 		});
+		}
 	};
 	carousel();
 
