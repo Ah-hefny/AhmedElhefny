@@ -63,29 +63,35 @@
 	burgerMenu();
 
 
-	var onePageClick = function() {
+var onePageClick = function() {
 
-        $(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
-                event.preventDefault();
+	$(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
+		event.preventDefault();
 
-                var target = this.hash;
+		var target = this.hash;
 
-                var scrollToTarget = function() {
-                        var targetTop = $(target).offset().top - 70;
+		if (window.innerWidth <= 991 && $('#ftco-nav').hasClass('show')) {
 
-                        $('html, body').stop(true, true).animate({
-                                scrollTop: targetTop
-                        }, 500);
-                };
+			$('#ftco-nav').one('hidden.bs.collapse', function() {
 
-                if (window.innerWidth <= 991 && $('#ftco-nav').hasClass('show')) {
-                        $('#ftco-nav').one('hidden.bs.collapse', function() {
-                                scrollToTarget();
-                        }).collapse('hide');
-                } else {
-                        scrollToTarget();
-                }
-        });
+				var targetTop = document.querySelector(target).getBoundingClientRect().top + window.pageYOffset - 70;
+
+				$('html, body').stop(true, true).animate({
+					scrollTop: targetTop
+				}, 500);
+
+			}).collapse('hide');
+
+		} else {
+
+			var targetTop = document.querySelector(target).getBoundingClientRect().top + window.pageYOffset - 70;
+
+			$('html, body').stop(true, true).animate({
+				scrollTop: targetTop
+			}, 500);
+
+		}
+	});
 
 };
 
