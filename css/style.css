@@ -9716,3 +9716,18 @@ strong.number[data-number="45500"]::after {
   content: " +";
 }
 
+
+@media (max-width: 991.98px) {
+  #ftco-navbar .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #ftco-navbar .navbar-toggler {
+    display: block;
+    margin-left: -10px;
+    margin-right: auto;
+    margin-top: -12px;
+  }
+}
