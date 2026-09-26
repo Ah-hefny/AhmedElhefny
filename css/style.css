@@ -9737,3 +9737,15 @@ strong.number[data-number="45500"]::after {
     margin-left: 25px;
   }
 }
+
+
+/* Mobile Hero Text Adjustment */
+@media (max-width: 767.98px) {
+  .owl-carousel.home-slider .slider-item .slider-text h1 {
+    font-size: 28px;
+  }
+
+  .owl-carousel.home-slider .slider-item .slider-text .text {
+    transform: translateY(150px);
+  }
+}
