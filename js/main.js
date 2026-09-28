@@ -287,6 +287,35 @@ var carousel = function() {
 
 
 
+  	// Contact form - Formspree
+	$('#contact-form').on('submit', function(e) {
+		e.preventDefault();
+
+		var form = this;
+		var successMessage = $('#form-success');
+		var submitButton = $(form).find('input[type="submit"]');
+
+		submitButton.prop('disabled', true).val('Sending...');
+
+		$.ajax({
+			url: form.action,
+			method: 'POST',
+			data: $(form).serialize(),
+			dataType: 'json'
+		})
+		.done(function() {
+			form.reset();
+			successMessage.fadeIn(300);
+			submitButton.prop('disabled', false).val('Send Message');
+		})
+		.fail(function() {
+			submitButton.prop('disabled', false).val('Send Message');
+			alert('Sorry, there was a problem sending your message. Please try again.');
+		});
+	});
+
+
+
 
 })(jQuery);
 
