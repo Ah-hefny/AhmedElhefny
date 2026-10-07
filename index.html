@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -85,6 +85,106 @@
     border-color: #00A3E0;
     color: #fff !important;
     transform: translateY(-2px);
+}
+
+/* WhatsApp Minimalist Orb */
+.whatsapp-orb {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #25D366, #128C7E);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    z-index: 990;
+    box-shadow: 0 8px 24px rgba(18, 140, 126, 0.38), 0 3px 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.whatsapp-orb:hover {
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 14px 32px rgba(37, 211, 102, 0.48), 0 5px 12px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.whatsapp-orb:active {
+    transform: translateY(-1px) scale(0.97);
+}
+
+.whatsapp-orb-icon {
+    width: 28px;
+    height: 28px;
+    fill: #ffffff;
+    display: block;
+    pointer-events: none;
+    transition: transform 0.25s ease;
+}
+
+.whatsapp-orb:hover .whatsapp-orb-icon {
+    transform: scale(1.04);
+}
+
+.whatsapp-orb-tooltip {
+    position: absolute;
+    right: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    background: rgba(18, 18, 18, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    padding: 7px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatsapp-orb-tooltip::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(18, 18, 18, 0.92);
+}
+
+.whatsapp-orb:hover .whatsapp-orb-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+@media (max-width: 767.98px) {
+    .whatsapp-orb {
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        right: 20px;
+        width: 48px;
+        height: 48px;
+    }
+    .whatsapp-orb-icon {
+        width: 25px;
+        height: 25px;
+    }
+    .whatsapp-orb-tooltip {
+        display: none !important;
+    }
 }
 </style>
 </head>
@@ -1433,6 +1533,18 @@ I translate data, ideas, and business requirements into clear visual solutions t
 	</footer>
 
 
+
+	<!-- WhatsApp Floating Button (Minimalist Orb) -->
+	<a href="https://wa.me/966565318829?text=Hello%20Ahmed%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.%20/%20%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D8%AD%D9%85%D8%AF%D8%8C%20%D8%A7%D8%B7%D9%84%D8%B9%D8%AA%20%D8%B9%D9%84%D9%89%20%D9%85%D8%B9%D8%B1%D8%B6%20%D8%A3%D8%B9%D9%85%D8%A7%D9%84%D9%83%20%D9%88%D8%A3%D9%88%D8%AF%20%D9%85%D9%86%D8%A7%D9%82%D8%B4%D8%A9%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%B9%D9%85%D9%84."
+	   class="whatsapp-orb"
+	   target="_blank"
+	   rel="noopener noreferrer"
+	   aria-label="Direct Inquiry on WhatsApp / تواصل مباشر عبر واتساب">
+		<span class="whatsapp-orb-tooltip">Direct Inquiry &bull; تواصل مباشر</span>
+		<svg class="whatsapp-orb-icon" viewBox="0 0 32 32" aria-hidden="true">
+			<path d="M16.01 3C8.83 3 3 8.82 3 16c0 2.4.66 4.72 1.91 6.74L3 29l6.45-1.87A12.94 12.94 0 0 0 16.01 29C23.18 29 29 23.18 29 16S23.18 3 16.01 3zm0 23.82c-2.08 0-4.1-.57-5.86-1.65l-.42-.25-4.34 1.26 1.28-4.21-.28-.44A10.74 10.74 0 0 1 5.18 16c0-5.97 4.86-10.82 10.83-10.82 5.97 0 10.82 4.85 10.82 10.82 0 5.98-4.85 10.82-10.82 10.82zm5.93-8.11c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.33-.85 1.06-1.04 1.28-.19.22-.38.25-.7.09-.33-.16-1.38-.51-2.63-1.63-.97-.87-1.63-1.94-1.82-2.27-.19-.32-.02-.5.14-.66.15-.14.33-.38.49-.57.17-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56l-.63-.01c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.37c.16.22 2.3 3.51 5.57 4.92.78.34 1.38.54 1.86.69.78.25 1.5.21 2.06.13.63-.09 1.92-.79 2.19-1.55.27-.76.27-1.42.19-1.55-.08-.14-.3-.22-.62-.38z"/>
+		</svg>
+	</a>
 
 	<!-- loader -->
 	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
