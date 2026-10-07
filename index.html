@@ -186,6 +186,14 @@
         display: none !important;
     }
 }
+
+/* Mobile fix: prevent nested project rows from overflowing */
+@media (max-width: 767.98px) {
+    #projects-section .row .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
 </style>
 </head>
 
